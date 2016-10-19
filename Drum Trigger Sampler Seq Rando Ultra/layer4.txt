@@ -1,0 +1,4 @@
+319.852 notes_seq 68 127.004;
+475 notes_seq 68 127.004;
+390 notes_seq 68 127.004;
+989.116 notes_seq 0 0;
