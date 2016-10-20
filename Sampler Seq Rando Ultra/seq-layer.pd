@@ -1,4 +1,4 @@
-#N canvas 72 66 1432 978 10;
+#N canvas 74 66 1432 978 10;
 #X obj 541 816 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 570 912 qlist;
@@ -76,7 +76,7 @@
 #X msg 1013 -87 \; led 2;
 #X obj 933 -51 f \$1;
 #X msg 933 -19 \; screenLine5 Layer \$1 comin up;
-#X msg 181 307 \; screenLine5 Palying;
+#X msg 181 307 \; screenLine5 Playing;
 #X connect 0 0 1 0;
 #X connect 1 1 3 0;
 #X connect 2 0 1 0;
