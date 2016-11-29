@@ -1,0 +1,27 @@
+#N canvas 1108 161 450 301 10;
+#X obj 46 174 makefilename;
+#X msg 46 197 set \$1%s;
+#X obj 97 98 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 67 121 sel 0 1;
+#X obj 67 98 int;
+#X msg 67 146 symbol _;
+#X msg 134 146 symbol #;
+#X obj 46 41 inlet;
+#X obj 46 291 outlet;
+#X obj 97 69 r vb\$1;
+#X obj 72 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 120 23 r vbang\$1;
+#X connect 0 0 1 0;
+#X connect 1 0 8 0;
+#X connect 2 0 4 1;
+#X connect 3 0 5 0;
+#X connect 3 1 6 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 9 0 2 0;
+#X connect 10 0 4 0;
+#X connect 11 0 10 0;

@@ -1,0 +1,23 @@
+#N canvas 6 50 1379 803 10;
+#X obj 39 62 routeOSC /key;
+#X obj 126 120 unpack;
+#X floatatom 126 150 5 0 0 0 - - -, f 5;
+#X floatatom 173 152 5 0 0 0 - - -, f 5;
+#X obj 126 218 pack;
+#X obj 173 179 / 1;
+#X obj 126 177 + 59;
+#X obj 39 89 route 0;
+#X obj 39 32 r oscIn;
+#X obj 126 253 s OGnotes;
+#X text 219 165 work around to filter organelle notes from incoming
+MIDI notes;
+#X connect 0 0 7 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 5 0;
+#X connect 4 0 9 0;
+#X connect 5 0 4 1;
+#X connect 6 0 4 0;
+#X connect 7 1 1 0;
+#X connect 8 0 0 0;
