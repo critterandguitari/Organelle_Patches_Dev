@@ -1,12 +1,12 @@
-#N canvas 229 222 1385 581 10;
+#N canvas 229 222 1633 855 10;
 #X obj 341 374 throw~ outL;
 #X obj 239 374 throw~ outR;
 #X obj 6 275 loadbang;
-#X obj 1437 137 i;
-#X obj 1437 58 r knob4;
-#X obj 1437 108 * 100;
-#X obj 1437 261 s screenLine4;
-#X obj 1437 159 change -1;
+#X obj 1416 117 i;
+#X obj 1416 38 r knob4;
+#X obj 1416 88 * 100;
+#X obj 1416 216 s screenLine4;
+#X obj 1416 139 change -1;
 #X obj 774 227 master-metronome, f 36;
 #X floatatom 898 168 5 0 0 0 - - -, f 5;
 #X obj 898 116 * 250;
@@ -19,7 +19,7 @@
 #X obj 781 14 r aux;
 #X obj 781 40 sel 1;
 #X obj 781 74 s cancel;
-#X obj 744 185 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 744 185 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 744 116 0;
 #X obj 787 111 r start-metro;
@@ -56,7 +56,7 @@
 #X obj 898 57 r knob2;
 #X obj 505 138 r knob1;
 #X msg 505 309 \; screenLine1 1: Div \$1 Sixteenths \;;
-#X obj 1194 26 r knob3;
+#X obj 1186 29 r knob3;
 #X obj 853 544 s midiOutGate;
 #X obj 853 464 loadbang;
 #X obj 853 490 delay 20;
@@ -73,21 +73,21 @@
 #X msg 1023 309 \; screenLine2 2: Tempo \$1 BPM \;;
 #X obj 774 201 change;
 #X obj 420 284 r~ inL;
-#X obj 1195 223 s screenLine3;
-#X obj 1194 68 *;
+#X obj 1187 226 s screenLine3;
+#X obj 1186 71 *;
 #X text 114 14 Effects Manager;
 #X obj 218 269 catch~ delay_voice_out;
 #X obj 239 294 catch~ distort_voice_out;
-#X obj 1194 162 int;
+#X obj 1186 165 int;
 #X msg 6 297 \; screenLine1 1: Div \; screenLine2 2: Tempo \; screenLine3
 3: Time \; screenLine4 4: Feedback \; screenLine5 Aux: Cancel \;;
-#X msg 1437 239 4: Fb/Dst level \$1 %;
-#X obj 1194 118 * 100;
+#X msg 1416 194 4: Fb/Dst level \$1 %;
+#X obj 1186 121 * 100;
 #X obj 9 52 delay-voice 0;
-#X obj 1194 140 + 2;
+#X obj 1186 143 + 2;
 #X obj 116 122 distortion-voice 12;
 #X obj 419 318 *~ 0.2;
-#X msg 1194 200 3: Dl/Dst time \$1 ms;
+#X msg 1186 203 3: Dl/Dst time \$1 ms;
 #X obj 115 97 delay-voice 11;
 #X obj 115 51 delay-voice 9;
 #X obj 7 74 delay-voice 1;
