@@ -1,4 +1,4 @@
-#N canvas 349 226 1382 625 10;
+#N canvas 43 70 1382 625 10;
 #X obj 126 290 catch~ sampout;
 #X obj 216 548 throw~ outL;
 #X obj 322 566 throw~ outR;
