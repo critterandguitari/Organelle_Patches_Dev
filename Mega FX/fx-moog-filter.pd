@@ -1,4 +1,4 @@
-#N canvas 5 50 1773 914 10;
+#N canvas 8 50 1773 914 10;
 #X obj 692 506 switch~;
 #X obj 170 678 *~;
 #N canvas 11 50 526 600 switcher 0;
@@ -133,6 +133,7 @@
 #X connect 12 1 2 1;
 #X connect 12 1 30 0;
 #X connect 13 0 1 0;
+#X connect 13 0 4 0;
 #X connect 15 0 17 0;
 #X connect 16 0 15 0;
 #X connect 17 0 14 0;
