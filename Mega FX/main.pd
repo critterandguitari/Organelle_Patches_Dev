@@ -1,4 +1,4 @@
-#N canvas 344 83 1517 870 10;
+#N canvas 345 80 1517 870 10;
 #X declare -path ./rj;
 #N canvas 7 50 811 846 testsound 0;
 #X text 396 415 offset cause we waited a little;
@@ -257,6 +257,13 @@
 #X obj 419 671 fx-reverb, f 33;
 #X obj 1228 622 print;
 #X obj 492 645 enabler 8;
+#X obj 758 423 throw~ outL;
+#X obj 874 423 throw~ outR;
+#X obj 759 370 r~ fx-in;
+#X obj 987 423 s fx-info;
+#X obj 831 372 enabler 9;
+#X obj 758 398 fx-flanger, f 33;
+#X obj 354 87 r~ inL;
 #X connect 0 0 1 0;
 #X connect 0 1 1 0;
 #X connect 3 0 0 0;
@@ -371,3 +378,13 @@
 #X connect 103 2 101 3;
 #X connect 103 3 101 4;
 #X connect 103 4 101 5;
+#X connect 106 0 109 0;
+#X connect 108 0 109 1;
+#X connect 108 1 109 2;
+#X connect 108 2 109 3;
+#X connect 108 3 109 4;
+#X connect 108 4 109 5;
+#X connect 109 0 104 0;
+#X connect 109 1 105 0;
+#X connect 109 2 107 0;
+#X connect 110 0 9 0;
