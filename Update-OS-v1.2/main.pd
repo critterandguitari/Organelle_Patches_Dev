@@ -1,0 +1,43 @@
+#N canvas 223 78 1265 639 10;
+#X obj 515 282 shell;
+#X obj 135 58 loadbang;
+#X obj 481 319 print;
+#X msg 129 91 \; screenLine1 Press Aux to begin. \; screenLine2 When
+the update is \; screenLine3 complete the \; screenLine4 Organelle
+will \; screenLine5 shutdown. \;;
+#X obj 494 139 sel 1;
+#X obj 494 62 r aux;
+#X obj 494 161 t b b;
+#X obj 539 189 s clear-oled;
+#X msg 292 303 \; screenLine2 Updating... \;;
+#X obj 515 220 delay 1000;
+#X obj 506 456 shell;
+#X obj 547 313 t b b;
+#X obj 506 394 delay 1000;
+#X msg 676 350 \; screenLine2 Sutting Down... \;;
+#X msg 507 423 /root/scripts/shutdown.sh;
+#N canvas 7 50 450 300 clear-oled 0;
+#X msg 91 123 \; oscOut send /oled/line/1 \; oscOut send /oled/line/2
+\; oscOut send /oled/line/3 \; oscOut send /oled/line/4 \; oscOut send
+/oled/line/5 \;;
+#X obj 91 47 r clear-oled;
+#X obj 91 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X restore 139 206 pd clear-oled;
+#X msg 515 249 /usbdrive/Patches/Update-OS-v1.2/deploy.sh;
+#X connect 0 0 2 0;
+#X connect 0 1 11 0;
+#X connect 1 0 3 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 8 0;
+#X connect 6 0 9 0;
+#X connect 6 1 7 0;
+#X connect 9 0 16 0;
+#X connect 11 0 12 0;
+#X connect 11 1 13 0;
+#X connect 12 0 14 0;
+#X connect 14 0 10 0;
+#X connect 16 0 0 0;
