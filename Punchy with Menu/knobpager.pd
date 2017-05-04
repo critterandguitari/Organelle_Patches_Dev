@@ -1,4 +1,4 @@
-#N canvas 49 364 401 379 10;
+#N canvas 51 358 401 379 10;
 #X obj 168 81 sel \$1;
 #X obj 223 274 s p\$1k\$2;
 #X obj 53 18 r knob\$2;
@@ -12,10 +12,10 @@
 #X obj 168 106 t b b b;
 #X obj 158 22 r knob-page-sel;
 #X obj 27 54 r disable-all-in;
+#X obj 113 232 t f f;
 #X connect 0 0 10 0;
 #X connect 2 0 6 0;
-#X connect 4 0 1 0;
-#X connect 4 0 3 0;
+#X connect 4 0 13 0;
 #X connect 5 0 4 2;
 #X connect 5 0 1 0;
 #X connect 6 0 4 0;
@@ -28,3 +28,5 @@
 #X connect 10 2 5 0;
 #X connect 11 0 8 0;
 #X connect 12 0 9 0;
+#X connect 13 0 3 0;
+#X connect 13 1 1 0;

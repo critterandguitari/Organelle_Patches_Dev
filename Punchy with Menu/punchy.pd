@@ -1,8 +1,8 @@
-#N canvas 57 118 1714 854 10;
+#N canvas 61 106 1714 854 10;
 #N canvas 4 50 450 278 (subpatch) 0;
 #X array seqvel 33 float 3;
-#A 0 126.752 126.752 126.752 126.752 126.752 126.752 126.752 126.752
-126.752 126.752 126.752 126.752 126.752 126.752 126.752 126.752 126.752
+#A 0 126.752 63.1279 126.752 71.3135 126.752 48.1211 126.752 126.628
+43.4082 126.752 57.7949 126.752 126.752 126.752 126.752 126.752 126.752
 126.752 126.752 126.752 126.752 126.752 126.752 126.752 126.752 126.752
 126.752 126.752 126.752 126.752 126.752 126.752 2;
 #X coords 0 128 33 0 200 140 1 0 0;
@@ -12,7 +12,7 @@
 #X obj 253 124 r notes;
 #X obj 563 223 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#N canvas 377 50 1126 994 seqplayer 0;
+#N canvas 379 50 1126 994 seqplayer 0;
 #X floatatom 130 231 5 0 0 0 - - -, f 5;
 #X obj 367 708 tabread seq;
 #X floatatom 368 732 5 0 0 0 - - -, f 5;
@@ -45,12 +45,12 @@
 #X text 328 47 length;
 #X text 689 41 speed;
 #X obj 255 15 unpack;
-#X obj 299 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 299 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 299 214 ==;
 #X obj 294 626 spigot 1;
 #X obj 680 252 moses 10;
-#X obj 287 712 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 287 712 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 240 804 s is-playing;
 #N canvas 1232 509 450 297 switch 0;
@@ -92,7 +92,7 @@
 #X msg 120 511 0;
 #X msg 157 513 1;
 #X obj 204 335 f;
-#X obj 242 273 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 242 273 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 143 257 t a a;
 #X obj 204 134 f;
@@ -191,22 +191,23 @@
 #X floatatom 692 332 5 0 0 0 - - -, f 5;
 #X obj 208 362 r len;
 #X obj 692 362 s len;
-#N canvas 127 237 634 688 latch 0;
+#N canvas 130 228 634 688 latch 0;
 #X obj 43 405 latch-notes;
-#X obj 263 232 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 263 232 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 173 298 spigot 1;
 #X obj 43 298 spigot 0;
 #X obj 263 258 == 0;
 #X obj 309 312 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 263 134 inlet;
+#X obj 261 101 inlet;
 #X obj 43 626 outlet;
 #X obj 43 106 inlet;
 #X text 44 53 incoming notes get sent through latch if enabled \, or
 directly to output if disabled;
 #X text 311 135 enable;
 #X obj 264 161 t f b, f 7;
+#X obj 260 133 change;
 #X connect 0 0 7 0;
 #X connect 1 0 4 0;
 #X connect 1 0 3 1;
@@ -214,13 +215,14 @@ directly to output if disabled;
 #X connect 3 0 0 0;
 #X connect 4 0 2 1;
 #X connect 5 0 0 1;
-#X connect 6 0 11 0;
+#X connect 6 0 12 0;
 #X connect 8 0 3 0;
 #X connect 8 0 2 0;
 #X connect 11 0 1 0;
 #X connect 11 1 5 0;
+#X connect 12 0 11 0;
 #X restore 267 176 pd latch;
-#X obj 330 137 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 330 137 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #N canvas 46 50 919 857 seqpuncher 0;
 #X obj 242 626 tabwrite seq;
@@ -291,8 +293,8 @@ directly to output if disabled;
 #X obj 284 310 r bpm;
 #N canvas 4 50 450 278 (subpatch) 0;
 #X array seq 33 float 3;
-#A 0 60 63 65 65 65 63 60 65 65 65 70 67 67 67 67 81 81 81 81 81 77
-77 76 75 75 73 72 71 72 70 69 67 15;
+#A 0 72 69 73 70 74 67 69 75 77 79 80 68 69 70 67 65 72 75 74 72 70
+72 72 76 73 73 70 72 71 74 77 74 7;
 #X coords 0 128 33 0 200 140 1 0 0;
 #X restore 756 127 graph;
 #X obj 286 630 outlet;
@@ -333,6 +335,7 @@ directly to output if disabled;
 #X connect 16 0 15 0;
 #X restore 753 438 pd save-recall-punchseq;
 #X obj 603 319 s endofseq;
+#X obj 391 182 print;
 #X connect 1 0 5 3;
 #X connect 2 0 12 1;
 #X connect 3 0 10 0;
