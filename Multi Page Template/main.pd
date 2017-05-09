@@ -1,4 +1,4 @@
-#N canvas 331 101 1348 829 10;
+#N canvas 203 70 1348 829 10;
 #X declare -path patchmenu;
 #N canvas 255 50 1357 905 mapping 0;
 #X obj 129 672 r page-ready;
@@ -109,41 +109,41 @@ and a Home selection that returns to main Organelle menu.;
 #X text 148 351 Enable the patch menu with a starting page number.
 0 is for the menu page itself. 1 would start on page 1;
 #X obj 815 187 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3581 1;
 #X obj 815 163 r p1k1;
 #X obj 872 187 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 1643 1;
 #X obj 929 187 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 1532 1;
 #X obj 986 187 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3593 1;
 #X obj 872 163 r p1k2;
 #X obj 929 163 r p1k3;
 #X obj 986 163 r p1k4;
 #X obj 813 291 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 2326 1;
 #X obj 870 291 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 5599 1;
 #X obj 927 291 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 6288 1;
 #X obj 984 291 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3199 1;
 #X obj 813 394 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 6288 1;
 #X obj 870 394 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 6288 1;
 #X obj 927 394 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 6288 1;
 #X obj 984 394 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 6288 1;
 #X obj 813 499 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 5814 1;
 #X obj 870 499 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 5765 1;
 #X obj 927 499 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 5931 1;
 #X obj 984 499 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 5734 1;
 #X obj 763 196 r p1a;
 #X obj 763 218 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -170,11 +170,11 @@ and a Home selection that returns to main Organelle menu.;
 #X obj 767 515 r p4a;
 #X text 183 11 Multi Page Patch Example;
 #X text 208 488 You can give the pages names here.;
-#N canvas 1673 185 712 499 more-menu-info 0;
-#X text 151 180 When you select a page from the menu (or turn the wheel
+#N canvas 108 156 679 492 more-menu-info 0;
+#X text 74 180 When you select a page from the menu (or turn the wheel
 which brings up the menu page) \, the following events are triggered:
 ;
-#X text 149 26 We like to thinkg of these pages as functional spaces
+#X text 72 26 We like to thinkg of these pages as functional spaces
 as opposed to simple knob pages. Having the Aux button paged means
 it is possible to have \, for example \, a sample record page. In this
 context it is helpful to have some signals that indicate page change
@@ -183,18 +183,18 @@ be manipulated elsewhere in the patch. If you started a recording on
 the record page but didn't stop it \, you might want to stop it automatically
 when you navigate to a new page. To help solve this kind of issue the
 menu system provides the following signals and values.;
-#X obj 166 235 r page-closing;
-#X floatatom 166 257 5 0 0 0 - - -, f 5;
-#X text 266 244 First the current page numer is sent out as page-closing.
+#X obj 89 235 r page-closing;
+#X floatatom 89 257 5 0 0 0 - - -, f 5;
+#X text 189 244 First the current page numer is sent out as page-closing.
 ;
-#X text 267 287 Then the OLED is cleard \, the new OLED page is activated
+#X text 190 287 Then the OLED is cleard \, the new OLED page is activated
 \, and the page knob paramters are recalled.;
-#X text 268 334 The curpage value is updated with the new page value.
+#X text 191 334 The curpage value is updated with the new page value.
 ;
-#X obj 169 333 v curpage;
-#X floatatom 166 401 5 0 0 0 - - -, f 5;
-#X obj 166 379 r page-ready;
-#X text 266 382 Finally the new page number is sent out as page-ready.
+#X obj 92 333 v curpage;
+#X floatatom 89 401 5 0 0 0 - - -, f 5;
+#X obj 89 379 r page-ready;
+#X text 189 382 Finally the new page number is sent out as page-ready.
 ;
 #X connect 2 0 3 0;
 #X connect 9 0 8 0;
