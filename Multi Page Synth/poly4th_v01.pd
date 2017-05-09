@@ -1,0 +1,71 @@
+#N canvas 546 147 1067 765 10;
+#X obj 114 454 hsl 128 15 0 127 0 0 empty e1 empty -2 -8 0 10 -33289
+-203904 -1 12700 1;
+#X obj 731 94 CC_Standard_Set;
+#X obj 114 216 hsl 128 15 3 127 0 0 r cc_ampR R -15 6 0 10 -258113
+-1 -1 0 1;
+#X obj 115 154 hsl 128 15 3 127 0 1 a cc_ampA A -15 6 0 10 -258113
+-1 -1 0 1;
+#X obj 115 173 hsl 128 15 3 127 0 0 d cc_ampD D -15 6 0 10 -258113
+-1 -1 0 1;
+#X obj 114 194 hsl 128 15 3 127 0 0 s cc_ampS S -15 6 0 10 -258113
+-1 -1 12700 1;
+#X obj 489 597 *~ 1;
+#X obj 114 406 hsl 128 15 3 127 0 0 f cc_cutoff F -15 6 0 10 -204786
+-1 -1 5600 1;
+#X obj 114 426 hsl 128 15 3 200 0 0 q cc_reso Q -15 6 0 10 -204786
+-1 -1 3300 1;
+#X obj 114 316 hsl 128 15 3 127 0 0 r2 cc_filtR R -15 6 0 10 -261234
+-1 -1 0 1;
+#X obj 115 254 hsl 128 15 3 127 0 0 a2 cc_filtA A -15 6 0 10 -261234
+-1 -1 0 1;
+#X obj 115 273 hsl 128 15 3 127 0 0 d2 cc_filtD D -15 6 0 10 -261234
+-1 -1 7900 1;
+#X obj 114 294 hsl 128 15 3 127 0 0 s2 cc_filtS S -15 6 0 10 -261234
+-1 -1 1500 1;
+#X obj 114 474 hsl 128 15 0 127 0 0 empty e2 empty -2 -8 0 10 -33289
+-203904 -1 12700 1;
+#X obj 114 377 hsl 128 15 3 127 0 0 o2amt cc_lfoamt OSC2_amt 0 -8 0
+10 -260445 -66577 -4160 4100 1;
+#X obj 114 337 hsl 128 15 3 127 0 0 amt cc_filtenvamt amt -23 6 0 10
+-260466 -1 -1 12700 1;
+#N canvas 421 206 450 300 polynotein 1;
+#X obj 123 130 pack 0 0 0;
+#X obj 128 230 outlet;
+#X obj 122 106 poly 4 1;
+#X obj 130 156 route 1 2 3 4;
+#X obj 188 230 outlet;
+#X obj 248 230 outlet;
+#X obj 309 230 outlet;
+#X obj 128 43 unpack 0 0;
+#X obj 120 12 r notes;
+#X obj 124 74 - 12;
+#X connect 0 0 3 0;
+#X connect 2 0 0 0;
+#X connect 2 1 0 1;
+#X connect 2 2 0 2;
+#X connect 3 0 1 0;
+#X connect 3 1 4 0;
+#X connect 3 2 5 0;
+#X connect 3 3 6 0;
+#X connect 7 0 9 0;
+#X connect 7 1 2 1;
+#X connect 8 0 7 0;
+#X connect 9 0 2 0;
+#X restore 473 269 pd polynotein;
+#X obj 459 354 note;
+#X obj 509 354 note;
+#X obj 569 354 note;
+#X obj 624 353 note;
+#X obj 465 647 throw~ outL;
+#X obj 607 642 throw~ outR;
+#X connect 6 0 21 0;
+#X connect 6 0 22 0;
+#X connect 16 0 17 0;
+#X connect 16 1 18 0;
+#X connect 16 2 19 0;
+#X connect 16 3 20 0;
+#X connect 17 0 6 0;
+#X connect 18 0 6 0;
+#X connect 19 0 6 0;
+#X connect 20 0 6 0;
