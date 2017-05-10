@@ -1,0 +1,305 @@
+#N canvas 203 70 1348 829 10;
+#X declare -path patchmenu;
+#N canvas 255 50 1357 905 mapping 0;
+#X obj 129 672 r page-ready;
+#X obj 124 465 r page-ready;
+#X obj 124 487 sel 3;
+#X obj 129 694 sel 4;
+#X msg 124 512 \; p3s1 This is Page 3 \; p3s2 It does nothing! \; p3s3
+See the 'mapping' \; p3s4 subpatch to define \; p3s5 stuff. \;;
+#X msg 129 718 \; p4s1 This is Page 4 \; p4s2 It does nothing! \; p4s3
+See the 'mapping' \; p4s4 subpatch to define \; p4s5 stuff. \;;
+#X text 436 594 page 3 and 4 don't have any use. 'page-ready' is a
+number that gets sent out when a new page is selected \, so it is useful
+for triggering messages like this. See the 'more-menu-info' subpatch
+for more info.;
+#X obj 409 76 * 100;
+#X obj 488 80 s tone;
+#X obj 409 102 i;
+#X obj 114 101 * 100;
+#X obj 115 22 r p1k1;
+#X obj 114 127 i;
+#X obj 410 42 r p1k2;
+#X msg 409 128 \; p1s2 2: Tone \$1;
+#X obj 195 116 s pitch;
+#X obj 671 112 i;
+#X obj 670 38 r p1k3;
+#X obj 668 71 * 2000;
+#X obj 722 113 s decay;
+#X msg 671 141 \; p1s3 3: Decay \$1 ms;
+#X obj 885 39 r p1k4;
+#X obj 886 71 bang;
+#X msg 890 108 \; p1s4 4: x;
+#X text 30 83 Page 1;
+#X text 31 313 Page 2;
+#X text 32 529 Page 3;
+#X text 33 733 Page 4;
+#X obj 405 281 * 100;
+#X obj 405 307 i;
+#X obj 111 316 i;
+#X obj 667 317 i;
+#X obj 111 290 * 2000;
+#X obj 161 320 s dtime;
+#X obj 110 247 r p2k1;
+#X obj 406 247 r p2k2;
+#X obj 666 243 r p2k3;
+#X obj 900 317 i;
+#X obj 897 276 * 2000;
+#X obj 951 318 s decay;
+#X obj 899 243 r p2k4;
+#X obj 484 285 s feedback;
+#X obj 664 276 * 100;
+#X obj 743 281 s damt;
+#X msg 111 343 \; p2s1 1: Delay Time \$1 ms;
+#X msg 404 333 \; p2s2 2: Feedback \$1 %;
+#X msg 667 346 \; p2s3 3: Amount \$1 %;
+#X msg 900 346 \; p2s4 4: x;
+#X msg 114 155 \; p1s1 1: Pitch Scale \$1 %;
+#X obj 115 45 * 2;
+#X obj 115 67 + 0.5;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 7 0 9 0;
+#X connect 9 0 14 0;
+#X connect 10 0 12 0;
+#X connect 11 0 49 0;
+#X connect 12 0 48 0;
+#X connect 13 0 7 0;
+#X connect 13 0 8 0;
+#X connect 16 0 20 0;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X connect 18 0 19 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 28 0 29 0;
+#X connect 29 0 45 0;
+#X connect 30 0 44 0;
+#X connect 31 0 46 0;
+#X connect 32 0 30 0;
+#X connect 32 0 33 0;
+#X connect 34 0 32 0;
+#X connect 35 0 28 0;
+#X connect 35 0 41 0;
+#X connect 36 0 42 0;
+#X connect 36 0 43 0;
+#X connect 37 0 47 0;
+#X connect 38 0 37 0;
+#X connect 38 0 39 0;
+#X connect 40 0 38 0;
+#X connect 42 0 31 0;
+#X connect 49 0 50 0;
+#X connect 50 0 15 0;
+#X connect 50 0 10 0;
+#X restore 694 654 pd mapping;
+#X obj 40 139 declare -path patchmenu;
+#X obj 36 406 patchmenu;
+#X obj 68 275 s enableSubMenu;
+#X obj 36 174 loadbang;
+#X msg 36 355 0;
+#X text 208 262 On startup \, first enable the patch submenu system
+by sending a bang to enableSubMenu. This patch is then responsible
+for sending a bang to goHome in order to return to the main Organelle
+menu., f 59;
+#X text 144 388 This defines a menu with 5 entries: 4 pages of controls
+and a Home selection that returns to main Organelle menu.;
+#X obj 36 240 t b b;
+#X text 148 351 Enable the patch menu with a starting page number.
+0 is for the menu page itself. 1 would start on page 1;
+#X obj 815 187 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3581 1;
+#X obj 815 163 r p1k1;
+#X obj 872 187 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1643 1;
+#X obj 929 187 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1532 1;
+#X obj 986 187 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3593 1;
+#X obj 872 163 r p1k2;
+#X obj 929 163 r p1k3;
+#X obj 986 163 r p1k4;
+#X obj 813 291 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2326 1;
+#X obj 870 291 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5599 1;
+#X obj 927 291 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6288 1;
+#X obj 984 291 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3199 1;
+#X obj 813 394 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6288 1;
+#X obj 870 394 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6288 1;
+#X obj 927 394 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6288 1;
+#X obj 984 394 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6288 1;
+#X obj 813 499 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5814 1;
+#X obj 870 499 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5765 1;
+#X obj 927 499 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5931 1;
+#X obj 984 499 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5734 1;
+#X obj 763 196 r p1a;
+#X obj 763 218 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 765 325 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 766 427 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 767 535 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 813 267 r p2k1;
+#X obj 870 268 r p2k2;
+#X obj 927 267 r p2k3;
+#X obj 984 267 r p2k4;
+#X obj 813 372 r p3k1;
+#X obj 869 371 r p3k2;
+#X obj 927 370 r p3k3;
+#X obj 985 370 r p3k4;
+#X obj 813 475 r p4k1;
+#X obj 870 475 r p4k2;
+#X obj 928 476 r p4k3;
+#X obj 984 476 r p4k4;
+#X obj 765 303 r p2a;
+#X obj 766 406 r p3a;
+#X obj 767 515 r p4a;
+#X text 183 11 Multi Page Patch Example;
+#X text 208 488 You can give the pages names here.;
+#N canvas 108 156 679 492 more-menu-info 0;
+#X text 74 180 When you select a page from the menu (or turn the wheel
+which brings up the menu page) \, the following events are triggered:
+;
+#X text 72 26 We like to thinkg of these pages as functional spaces
+as opposed to simple knob pages. Having the Aux button paged means
+it is possible to have \, for example \, a sample record page. In this
+context it is helpful to have some signals that indicate page change
+events. For example consider a page that was recording a sample to
+be manipulated elsewhere in the patch. If you started a recording on
+the record page but didn't stop it \, you might want to stop it automatically
+when you navigate to a new page. To help solve this kind of issue the
+menu system provides the following signals and values.;
+#X obj 89 235 r page-closing;
+#X floatatom 89 257 5 0 0 0 - - -, f 5;
+#X text 189 244 First the current page numer is sent out as page-closing.
+;
+#X text 190 287 Then the OLED is cleard \, the new OLED page is activated
+\, and the page knob paramters are recalled.;
+#X text 191 334 The curpage value is updated with the new page value.
+;
+#X obj 92 333 v curpage;
+#X floatatom 89 401 5 0 0 0 - - -, f 5;
+#X obj 89 379 r page-ready;
+#X text 189 382 Finally the new page number is sent out as page-ready.
+;
+#X connect 2 0 3 0;
+#X connect 9 0 8 0;
+#X restore 34 592 pd more-menu-info;
+#X text 221 140 Add the patchmenu folder to the search path.;
+#X text 161 47 This patch defines a menu with 4 pages. The knobs get
+routed depending on the page. When you select Save or Save New from
+the Organelle System menu all of the page parameters get saved.;
+#X text 799 667 The pXkY knob values above can of course be used anywhere
+in your patch \, but it might be helpful to keep them separated from
+the guts of your patch. This way you can change what knob does what
+without having to go digging through your patch. Also makes the other
+components of your patch more reusable.;
+#N canvas 757 239 659 601 guts 0;
+#X obj 203 551 throw~ outL;
+#X obj 310 546 throw~ outR;
+#X text 282 345 final gain adjustment;
+#X obj 91 126 route 1 2 3 4 5 6, f 34;
+#X obj 91 224 voice;
+#X obj 213 343 *~ 0.3;
+#X obj 91 28 r notes;
+#X obj 91 79 poly 6;
+#X obj 91 54 unpack;
+#X obj 91 101 pack 0 0 0;
+#X obj 349 224 voice;
+#X obj 194 224 voice;
+#X obj 245 224 voice;
+#X obj 297 224 voice;
+#X obj 144 224 voice;
+#X obj 322 487 *~;
+#X obj 296 437 delay5sec;
+#X obj 353 393 r dtime;
+#X obj 427 390 r feedback;
+#X obj 520 364 r damt;
+#X obj 520 386 t f f;
+#X obj 520 408 *;
+#X obj 520 430 lop~ 5;
+#X connect 3 0 4 0;
+#X connect 3 1 14 0;
+#X connect 3 2 11 0;
+#X connect 3 3 12 0;
+#X connect 3 4 13 0;
+#X connect 3 5 10 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 5 0 1 0;
+#X connect 5 0 16 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 7 1 9 1;
+#X connect 7 2 9 2;
+#X connect 8 0 7 0;
+#X connect 8 1 7 1;
+#X connect 9 0 3 0;
+#X connect 10 0 5 0;
+#X connect 11 0 5 0;
+#X connect 12 0 5 0;
+#X connect 13 0 5 0;
+#X connect 14 0 5 0;
+#X connect 15 0 1 0;
+#X connect 15 0 0 0;
+#X connect 16 0 15 0;
+#X connect 17 0 16 1;
+#X connect 18 0 16 2;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 20 1 21 1;
+#X connect 21 0 22 0;
+#X connect 22 0 15 1;
+#X restore 285 687 pd guts;
+#X msg 36 465 \; screenLine1 1) Synth \; screenLine2 2) Effect \; screenLine3
+3) Page 3 \; screenLine4 4) Page 4 \; screenLine5 <-- HOME \;;
+#X text 800 614 In this sub-patch the pages of knob values are scaled
+\, displayed on the OLED and dispatched to the rest of your patch.
+;
+#X text 208 197 Checks the /root/version file \, releasing a bang if
+the OS version is high enough. Otherwise displays warning to update
+Organelle OS.;
+#X obj 36 206 versioncheck 2;
+#X text 756 109 The patch menu yields 4 pages of knob values abbreviated
+pXkY for page 1-4 \, knob 1-4. The Aux button and OLED screen lines
+are also paged as pXa and pXsY.;
+#X connect 2 0 57 0;
+#X connect 4 0 60 0;
+#X connect 5 0 2 0;
+#X connect 8 0 5 0;
+#X connect 8 1 3 0;
+#X connect 11 0 10 0;
+#X connect 15 0 12 0;
+#X connect 16 0 13 0;
+#X connect 17 0 14 0;
+#X connect 30 0 31 0;
+#X connect 35 0 18 0;
+#X connect 36 0 19 0;
+#X connect 37 0 20 0;
+#X connect 38 0 21 0;
+#X connect 39 0 22 0;
+#X connect 40 0 23 0;
+#X connect 41 0 24 0;
+#X connect 42 0 25 0;
+#X connect 43 0 26 0;
+#X connect 44 0 27 0;
+#X connect 45 0 28 0;
+#X connect 46 0 29 0;
+#X connect 47 0 32 0;
+#X connect 48 0 33 0;
+#X connect 49 0 34 0;
+#X connect 60 0 8 0;
