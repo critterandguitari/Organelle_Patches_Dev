@@ -2,6 +2,18 @@
 
 echo "Updating OS"
 
+# checking the files
+/usbdrive/Patches/Update-OS-v2.1/checkfiles.sh
+
+OUT=$?
+if [ $OUT -eq 0  ];then
+    echo "files check out"
+else
+    echo "file issue"
+    echo "error 1"
+    exit 1
+fi
+
 # remount root read write
 /root/scripts/remount-rw.sh
 
@@ -19,6 +31,11 @@ sync
 
 # just chill
 sleep 1
+
+# let pd know
+echo "sucess 1"
+
+exit 0
 
 # normally we'd want to remount read only, but this is not possible because of cp -f
 # but pd patch will call shutdown after this anyway
