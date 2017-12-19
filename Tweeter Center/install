@@ -1,0 +1,28 @@
+[root@organelle ~]# pip install twython
+Collecting twython
+  Downloading twython-3.6.0.tar.gz
+Collecting requests>=2.1.0 (from twython)
+  Downloading requests-2.18.4-py2.py3-none-any.whl (88kB)
+    100% |################################| 92kB 613kB/s 
+Collecting requests_oauthlib>=0.4.0 (from twython)
+  Downloading requests_oauthlib-0.8.0-py2.py3-none-any.whl
+Collecting certifi>=2017.4.17 (from requests>=2.1.0->twython)
+  Downloading certifi-2017.11.5-py2.py3-none-any.whl (330kB)
+    100% |################################| 337kB 320kB/s 
+Collecting chardet<3.1.0,>=3.0.2 (from requests>=2.1.0->twython)
+  Downloading chardet-3.0.4-py2.py3-none-any.whl (133kB)
+    100% |################################| 143kB 659kB/s 
+Collecting idna<2.7,>=2.5 (from requests>=2.1.0->twython)
+  Downloading idna-2.6-py2.py3-none-any.whl (56kB)
+    100% |################################| 61kB 549kB/s 
+Collecting urllib3<1.23,>=1.21.1 (from requests>=2.1.0->twython)
+  Downloading urllib3-1.22-py2.py3-none-any.whl (132kB)
+    100% |################################| 133kB 610kB/s 
+Collecting oauthlib>=0.6.2 (from requests_oauthlib>=0.4.0->twython)
+  Downloading oauthlib-2.0.6.tar.gz (127kB)
+    100% |################################| 133kB 662kB/s 
+Installing collected packages: certifi, chardet, idna, urllib3, requests, oauthlib, requests-oauthlib, twython
+  Running setup.py install for oauthlib ... done
+  Running setup.py install for twython ... done
+Successfully installed certifi-2017.11.5 chardet-3.0.4 idna-2.6 oauthlib-2.0.6 requests-2.18.4 requests-oauthlib-0.8.0 twython-3.6.0 urllib3-1.22
+
